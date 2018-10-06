@@ -1,0 +1,18 @@
+<section class="notifications">
+  <ul *ngIf="notifications" [@groupFlyInAnimation]>
+
+    <li *ngFor="let item of notifications" [ngStyle]="randomizeAll()">
+      <header>
+        <h2 class="title-icon">
+          <i [class]="item.icon"></i>
+          {{ item.title }}
+        </h2>
+        <h2>{{ item.date }}</h2>
+      </header>
+      <div class="content">
+        <p>{{ item.content }}</p>
+      </div>
+    </li>
+  </ul>  
+</section>
+

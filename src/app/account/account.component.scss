@@ -1,0 +1,257 @@
+// Colors
+$color_background: #12141A;
+$color_box: #292F37;
+$color_green: #00FFC6;
+$color_orange: #EB933C;
+$color_red: #EB3C3C;
+$color_grey: #A2A5A9;
+
+
+
+
+section.account {
+    background-color: $color_background;
+    color: white;
+    height: 100%;
+
+    box-sizing: border-box;
+    padding: 0.5em;
+    column-gap: 0.5em;
+
+    div.constant,
+    div.regular {
+        grid-area: regular;
+        background-color: $color_box;
+
+        display: flex;
+        flex-direction: column;
+
+        header {
+            direction: rtl;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid $color_green;
+            padding-bottom: 1em;
+            color: white;
+            box-sizing: border-box;
+            padding: 1em;
+
+            h1 {
+                font-size: 2em;
+                font-weight: 700;
+            }
+        }
+
+        ul.sallary-container,
+        ul.constant-expanses,
+        ul.regularContainer {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            display: flex;
+            flex-direction: column;
+
+            height: 100%;
+            box-sizing: border-box;
+            padding: 1em;
+
+            li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 1em;
+                
+                span.content {
+                    width: 80%;
+                    direction: rtl;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    span.desc {
+                        display: flex;
+                        align-items: center;
+                        
+                        p {
+                            margin: 0;
+                            font-size: 1.3em;
+                            padding: 0 0.5em;
+                        }
+
+                        i {
+                            font-size: 1.3em;
+                        }
+                    }
+
+                    span.sum {
+                        display: flex;
+                        align-items: center;
+
+                        p {
+                            margin: 0;
+                            font-size: 1.3em;
+                            padding: 0 0.5em;
+                        }
+                    }
+               
+                }
+            }
+        }
+
+        ul.sallary-container {
+            list-style: none;
+            margin: 0;
+            padding: 0 0.5em;
+
+            display: flex;
+            flex-direction: column;
+
+            height: 50px;
+            box-sizing: border-box;
+
+            li span.sum {
+                color: $color_green;
+            }
+        }
+    }
+
+
+    div.mainAndConst {
+        grid-area: mainAndConst;
+        background-color: $color_box;
+
+        display: flex;
+        flex-direction: column;
+
+        div.sum {
+            display: flex;
+            flex-direction: column;
+            background-color: $color_background;
+            justify-content: flex-end;
+            padding-bottom: 0.5em;
+
+            header  {
+                display: flex;
+                align-content: center;
+                justify-content: space-between;
+                box-sizing: border-box;
+                padding: 0.5em 0;
+                font-size: 2em;
+                direction: rtl;
+                height: 100px;
+
+                h1 {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                }
+
+                h1.sum {
+                    color: $color_grey;
+                    background-color: $color_box;
+                    padding: 0 1em;
+                }
+            }
+        }
+
+        div.cards {
+            background-color: $color_box;
+            
+            ul {
+                display: flex;
+                align-content: center;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                height: 100%;
+                justify-content: space-evenly;
+                direction: rtl;
+                box-sizing: border-box;
+                padding: 1em 0;
+
+                li {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    border-left: 2px solid $color_green;
+                    box-sizing: border-box;
+                    padding: 0 0.5em;
+                    font-size: 1.5em;
+                    text-align: center;
+                    width: 25%;
+                    height: 100px;
+
+                    i {
+                        padding-right: 0.5em;
+                        font-size: 1em;
+                    }
+
+                    span.regular {
+                        color: $color_red;
+                        font-weight: 700;
+                        font-size: 1.5em;
+                    }
+
+                    span.constant {
+                        color: $color_orange;
+                        font-weight: 700;
+                        font-size: 1.5em;
+                    }
+
+                    span.loans {
+                        color: $color_grey;
+                        font-weight: 700;
+                        font-size: 1.5em;
+                    }
+
+                    span.savings {
+                        color: $color_green;
+                        font-weight: 700;
+                        font-size: 1.5em;
+                    }
+
+                }
+
+                & li:last-of-type {
+                    border-left: 2px solid transparent;
+                }
+
+                
+            }
+        }
+    }
+}
+
+div.constant ul.constant-expanses li span.content p.value {
+    color: $color_orange;    
+}
+
+div.regular ul.regularContainer li span.content p.value {
+    color: $color_red;    
+}
+
+div.constant {
+    padding-top: 1em;
+    height: 70%;
+}
+
+section.account.pineapple {
+    display: grid;
+    grid-template-areas: "regular mainAndConst";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+section.account.moonShine {
+    display: grid;
+    grid-template-areas: "mainAndConst regular";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+// pineapple
+// moonShine
+// starbike

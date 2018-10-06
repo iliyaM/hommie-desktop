@@ -1,0 +1,5 @@
+<section class="main">
+  <app-account *ngIf="selectedScreen === 'account' " [layout]="selectedLayout" [month]="accountMonth"></app-account>
+  <app-screen-saver *ngIf="selectedScreen === 'screenSaver' " [layout]="selectedLayout"></app-screen-saver>
+  <app-notifications *ngIf="selectedScreen === 'notifications' " [layout]="selectedLayout"></app-notifications>
+</section>

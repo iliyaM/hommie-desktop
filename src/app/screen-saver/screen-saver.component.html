@@ -1,0 +1,11 @@
+<section class="screen-saver">
+  <div class="mainImage" *ngIf="sliderArray">
+    <span class="time">{{ currentTime }}</span>
+
+    <i *ngFor="let item of sliderArray; let i = index">
+      <img [src]="item.url | async" [ngClass]="{'selected': item.selected }">
+      <p [ngClass]="{'selected': item.selected }">{{item.desc}}</p>
+    </i>
+
+  </div>
+</section>

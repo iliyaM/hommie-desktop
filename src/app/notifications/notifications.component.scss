@@ -1,0 +1,66 @@
+$color_background: #12141A;
+$color_box: #292F37;
+$color_green: #00FFC6;
+$color_orange: #EB933C;
+$color_red: #EB3C3C;
+$color_grey: #A2A5A9;
+
+section.notifications {
+    height: 100%;
+    background-image: radial-gradient(circle, #c9cbc3, #919995, #5f6a6a, #353d41, #12141a);
+    
+    ul {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        padding: 1em;
+        justify-content: space-evenly;
+
+        li {
+            width: 250px;
+            height: 250px;
+            box-shadow: 5px 6px 11px 2px #252323de;
+
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 0.5em;
+
+
+            header {
+                direction: rtl;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                box-sizing: border-box;
+
+                color: $color_background;
+
+                h2.title-icon {
+                    i {
+                        padding-left: 0.5em;
+                    }
+                }
+            }
+
+            div.content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height: 100%;
+                align-items: center;
+                
+                p {
+                    margin: 0;
+                    color: $color_background;
+                    font-size: 1.3em;
+                }
+            }
+        }
+    }
+}

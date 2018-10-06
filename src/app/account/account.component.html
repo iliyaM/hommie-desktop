@@ -1,0 +1,100 @@
+<section class="account  {{ layout }} ">
+
+  <div class="regular">
+    <header>
+      <h1>הוצאות חודשיות</h1>
+      <h1>{{ currentMonth }}</h1>
+    </header>
+
+    <ul *ngIf="regularExpanses" [@groupFlyInAnimation] class="regularContainer">
+      <li *ngFor="let item of regularExpanses">
+        <span class="date">{{ item.date }}</span>
+
+        <span class="content">
+          <span class="desc">
+            <i [class]="item.icon"></i>
+            <p>{{ item.desc }}</p>
+          </span>
+          <span class="sum">
+              <p class="value">{{ item.value }}</p>
+              <i class="fa fa-ils"></i>
+          </span>
+        </span>
+
+      </li>
+    </ul>
+
+   <ul *ngIf="sallary" class="sallary-container">
+      <li>
+        <span class="date">{{ sallaryItem.date }}</span>
+
+        <span class="content">
+          <span class="desc">
+            <i [class]="sallaryItem.icon"></i>
+            <p>{{ sallaryItem.desc }}</p>
+          </span>
+          <span class="sum">
+              <p class="value">{{ sallaryItem.value }}</p>
+              <i class="fa fa-ils"></i>
+          </span>
+        </span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="mainAndConst">
+    <div class="sum">
+      <header>
+        <h1>{{currentMonth}}</h1>
+        <h1>מצב עו"ש</h1>
+        <h1 class="sum">{{ totalSum }}</h1>
+      </header>
+
+      <div class="cards">
+        <ul>
+          <li>
+            <span class="constant">{{ constantExpansesSum }}<i class="fa fa-ils"></i></span>
+            <span>סה"כ הוצאות קבועות</span>
+          </li>
+
+          <li>
+            <span class="regular">{{ regularExpansesSum }}<i class="fa fa-ils"></i></span>
+            <span>סה"כ הוצאות חודשיות</span>
+          </li>
+
+           <li>
+            <span class="loans">{{showLoans}}<i class="fa fa-ils"></i></span>
+            <span>הלוואות</span>
+          </li>
+
+          <li>
+            <span class="savings">{{ showSavings }}<i class="fa fa-ils"></i></span>
+            <span>חסכונות</span>
+          </li> 
+        </ul>
+      </div>
+    </div>
+    <div class="constant">
+      <header>
+        <h1>הוצאות קבועות</h1>
+      </header>  
+      <ul *ngIf="constantExpanses" [@groupFlyInAnimation] class="constant-expanses">
+        <li *ngFor="let item of constantExpanses">
+          <span class="date">{{ item.date }}</span>
+          <span class="content">
+
+            <span class="desc">
+              <i [class]="item.icon"></i>
+              <p>{{ item.desc }}</p>
+            </span>
+            <span class="sum">
+                <p class="value">{{ item.value }}</p>
+                <i class="fa fa-ils"></i>
+            </span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</section>
